@@ -17,3 +17,14 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+Route.get('/product','ProductController.allProduct')
+Route.post('/product','ProductController.store')
+
+Route.get('/orders','OrderTransactionController.allOrders')
+Route.post('/order','OrderTransactionController.storeOrder')
+Route.patch('/order/:id','OrderTransactionController.updateOrder')
+Route.delete('/order/:id','OrderTransactionController.deleteOrder')
+
+Route.post('/transaction','OrderTransactionController.storeTransaction')
+Route.get('/transaction/:id','OrderTransactionController.getTransaction')
